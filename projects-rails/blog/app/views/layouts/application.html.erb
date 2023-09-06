@@ -11,12 +11,19 @@
   </head>
 
   <body>
-    <div class="bg-danger text-white mb-4 p-4">
-      <%= link_to root_path, class:"text-white" %>
-     <h1 class="text-white">Pipi Gululoso</h1>
+    <div class="bg-primary text-white mb-4 p-4 text-center">
+      <%= link_to root_path, class:"text-white" do%>
+      <h1>Blog do Pipi</h1>
+      <%end%>
 
-    </div>
-    dfgggg
-    <%= yield %>
+      <p class="lead">Olá, me chamo Joao Pierre (Pipi), e estou no caminho para me tornar um desenvlovedor!</p>
+     </div>
+     <div class="container">
+     <%= yield %>
+     </div>
+    
+    <footer class="text-white bg-primary p-4 mt-5 mb-5 ">
+      Copyright Pipi <%=Date.current.year%>
+    </footer>
   </body>
 </html>
