@@ -1,3 +1,20 @@
-<%= post.title %>
-<%= post.author%>
-<%= post.body %>
+
+<div class="shadow p-5 rb-5 bg-light rounded ">
+  <div class="text-center mb-5">
+    <h1><%= @post.title %></h1>
+
+    <p class="text-muted">
+    <strong>Por <%= @post.author%></strong>
+    <br>
+    <%= l @post.created_at, format: :long %>
+  </p>
+  </div>
+
+  <div class="px-5">
+    <%= @post.body.gsub("\n","<br>").html_safe%>
+  </div>
+</div>
+
+
+
+
