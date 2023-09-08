@@ -17,10 +17,24 @@
       <%end%>
 
       <p class="lead">Olá, me chamo Joao Pierre (Pipi), e estou no caminho para me tornar um desenvlovedor!</p>
+    </div>
+    <div class="container">
+     <% flash.each do |type, message|%>
+     <div class="alert alert-<%=type == 'alert' ? 'danger':'success' %> alert-dismissible fade show" role="alert">
+      <%=message%>
+       
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
      </div>
-     <div class="container">
+
+
+     <% end %>
+
+
+
      <%= yield %>
-     </div>
+    </div>
     
     <footer class="text-white bg-primary p-4 mt-5 mb-5 text-center">
       Copyright Pipi <%=Date.current.year%>
