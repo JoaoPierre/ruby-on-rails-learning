@@ -113,8 +113,8 @@ RSpec.describe 'Nested Array Exercises' do
         ]
       end
 
-      xit 'returns the hash with the name Ruby' do
-        expected_output = {:name=>"Ruby", :is_my_favorite?=>true}
+      it 'returns the hash with the name Ruby' do
+        expected_output = {name: "Ruby", is_my_favorite?: true}
         expect(find_favorite(array)).to eq(expected_output)
       end
     end

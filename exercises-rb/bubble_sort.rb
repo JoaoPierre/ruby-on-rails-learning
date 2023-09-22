@@ -1,16 +1,12 @@
 def bubble_sort(arr)
-  sorted = []
-  arr.each_with_index do |elem ,i|
-    if elem < arr[i+1]
-      sorted.push(elem)
-    elsif elem > arr[i-1]  
-      sorted.push(arr[i-1])
-    else 
-      sorted.push(elem)
+  sorted = false
+  i = 1
+  for i in (1..arr.length-1)
+    if arr[i] < arr[i-1]
+      arr[i], arr[i-1] = arr[i-1], arr[i]
     end
   end
-  puts sorted
-
+  p arr
 end
 
 bubble_sort([3,1,5,7,2,4,6,5,7])
