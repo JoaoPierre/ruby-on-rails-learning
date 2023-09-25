@@ -36,10 +36,15 @@ class MyCar
   end 
 
 
-  def self.consume( miles , gallon)
+  def self.consume(miles,gallon)
     puts "the car consume was #{miles/gallon} MILES PER GALLON of gas"
   end
+
+  def to_s
+    "my car is #{color} and #{@model}!"
+  end  
 end 
+
 
 
 
