@@ -1,0 +1,8 @@
+<h1>Blog do Pipi</h1>
+  
+<% @blog_posts.each do |post|%>
+  <div>
+    <h2><%= link_to post.title, post%></h2>
+    <%= post.body%>
+  </div>
+<%end%>
