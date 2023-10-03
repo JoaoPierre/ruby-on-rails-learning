@@ -1,5 +1,5 @@
 class Luhn
-
+  REGULAR_EXPRESSION = {any_non_numerics?: /[^0-9\s]/}
   def self.valid?(identification)
     new(identification).valid?
   end
@@ -18,7 +18,7 @@ class Luhn
   end
 
   def non_numerics?
-    identification.to_s.match?(/[^0-9\s]/)
+    identification.to_s.match?(REGULAR_EXPRESSION[:any_non_numerics?])
   end
 
   def initialize(identification)
