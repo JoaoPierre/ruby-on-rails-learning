@@ -9,11 +9,9 @@ class Acronym
   private
 
   attr_reader :phrase
-  attr_accessor :result
 
   def initialize(phrase)
     @phrase = phrase.upcase
-    @result = ""
   end
 
   def self.abbreviate(phrase)
@@ -27,6 +25,7 @@ class Acronym
   public
 
   def abbreviate
+    result = ""
     separated_words.each do |word|
        result << word[0]
     end
