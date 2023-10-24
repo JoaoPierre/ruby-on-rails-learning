@@ -1,10 +1,7 @@
 class Complement
 
-  TRANSCRIPTION =
-  {"G" => "C",
-   "C" => "G",
-   "T" => "A",
-   "A" => "U"}
+  DNA_NUCLEOTIDES = "GCTA"
+  RNA_NUCLEOTIDES = "CGAU"
 
   def self.of_dna(dna)
     new(dna).of_dna
@@ -15,16 +12,12 @@ class Complement
   attr_reader :dna
 
   def initialize(dna)
-    @dna = dna.chars
+    @dna = dna
   end
 
   public
 
   def of_dna
-    transcripted = ""
-     dna.each do |nucleotide|
-      transcripted << TRANSCRIPTION[nucleotide]
-    end
-    transcripted
+    transcripted = dna.tr(DNA_NUCLEOTIDES, RNA_NUCLEOTIDES)
   end
 end
