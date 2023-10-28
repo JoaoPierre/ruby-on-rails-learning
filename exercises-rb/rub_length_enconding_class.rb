@@ -16,26 +16,44 @@ class RunLengthEncoding
     @input = input.chars
   end
 
+  def chars_to_num
+    break_input.map(&:to_i)  #num becomes num, letters becomes 0
+  end
+
+  def break_input
+    input.join.scan(/[\d]+|[\D]/)
+  end
+
   public
 
   def encode
     count = 1
-    encode = ""
+    output = ""
     input.each_with_index do |char , index|
       if char != input[index +1]
-        count > 1 ? encode << count.to_s : encode
-        encode << char
+        count > 1 ? output << count.to_s : output
+        output << char
         count = 1
       else
         count += 1
       end
     end
-    encode
+    output
   end
 
   def decode
-    p input.join.scan(/[1-9]+[a-z]||[a-z]/i)
+    output = ""
+    count = 1
+    chars_to_num.each_with_index do |num , index|
+      if num == 0
+        count.times do
+          output << break_input[index]
+          count = 1
+        end
+      else
+        count = num
+      end
+    end
+    output
   end
 end
-
-RunLengthEncoding.decode("15b3Ck")
