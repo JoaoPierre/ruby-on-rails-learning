@@ -31,5 +31,3 @@ class PerfectNumber
     p number_multiples.sum
   end
 end
-
-PerfectNumber.classify(28)
