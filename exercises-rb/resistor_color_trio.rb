@@ -30,3 +30,4 @@ class ResistorColorTrio
     second_num = COLORS[colors[1]]
     fullnum = (first_num+second_num)*10**COLORS[colors[0]]
   end
+end
