@@ -12,5 +12,7 @@ def media(elem)
 end
 def balela
   puts "only to not lose git streak day 1"
+  puts "only to not lose git streak day 1"
+
 end
 media([3,7,8,12])
