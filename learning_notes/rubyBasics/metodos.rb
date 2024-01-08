@@ -13,6 +13,7 @@ end
 def balela
   puts "only to not lose git streak day 1"
   puts "only to not lose git streak day 1"
+  puts "Fuck bootstrap"
 
 end
 media([3,7,8,12])
