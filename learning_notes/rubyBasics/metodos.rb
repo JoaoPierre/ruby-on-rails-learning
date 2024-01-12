@@ -15,6 +15,7 @@ def balela
   puts "only to not lose git streak day 2"
   puts "Fuck bootstrap"
   puts "bootstrap == lixoooooooooooooooooooooooooooooooooooooo"
+  puts "maybe im the worse person ever"
 
 end
 media([3,7,8,12])
