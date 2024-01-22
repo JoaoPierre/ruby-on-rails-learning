@@ -16,6 +16,7 @@ def balela
   puts "Fuck bootstrap"
   puts "bootstrap == lixoooooooooooooooooooooooooooooooooooooo"
   puts "maybe im the worse person ever"
+  puts "why am i lazy as fuck?"
 
 end
 media([3,7,8,12])
