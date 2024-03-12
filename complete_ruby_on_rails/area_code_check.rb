@@ -14,7 +14,7 @@ dial_book = {
 line = "-" * 25
 
 def get_city_names(hash)
-  hash.keys.each do {|city| puts "city"}
+  hash.keys.each  {|city| puts "#{city}"}
 end
 
 def get_area_code(hash, key)
@@ -34,4 +34,4 @@ loop do
 
   city_name = gets.chomp.downcase
   get_area_code(dial_book, city_name)
-  end
+end
