@@ -1,5 +1,4 @@
 class Acronym
-
   REGULAR_EXPRESSION = {space_hyphen: /[\s-]+/}
 
   RE = REGULAR_EXPRESSION
@@ -23,7 +22,7 @@ class Acronym
   def abbreviate
     result = ""
     separated_words.each do |word|
-       result << word[0]
+      result << word[0]
     end
     result
   end

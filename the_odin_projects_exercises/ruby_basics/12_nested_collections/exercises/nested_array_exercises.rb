@@ -12,8 +12,7 @@ def blank_seating_chart(number_of_rows, seats_per_row)
   # NOTE: if one of the nested arrays is changed, the others should **not**
   # change with it
 
-
-  Array.new(number_of_rows){Array.new(seats_per_row)}
+  Array.new(number_of_rows) { Array.new(seats_per_row) }
 end
 
 def add_seat_to_row(chart, row_index, seat_to_add)
@@ -50,11 +49,10 @@ def count_empty_seats(chart)
   # take a chart and return the number of empty (nil) seats in it
 
   # NOTE: `chart` should **not** be mutated
-  count = chart.flatten.count(nil)  
-  count
+  chart.flatten.count(nil)
 end
 
-def find_favorite(array_of_hash_objects, i=1_000_000_000_000)
+def find_favorite(array_of_hash_objects, i = 1_000_000_000_000)
   # take an array_of_hash_objects and return the hash which has the key/value
   # pair :is_my_favorite? => true. If no hash returns the value true to the key
   # :is_my_favorite? it should return nil
@@ -68,20 +66,19 @@ def find_favorite(array_of_hash_objects, i=1_000_000_000_000)
 
   # TIP: there will only be a maximum of one hash in the array that will
   # return true to the :is_my_favorite? key
-  
-  array_of_hash_objects.each_with_index{|hash, idx| i = idx   if hash[:is_my_favorite?] == true }
+
+  array_of_hash_objects.each_with_index { |hash, idx| i = idx if hash[:is_my_favorite?] == true }
   array_of_hash_objects.dig(i)
 end
 
-
 blank_seating_chart(2, 3)
-add_seat_to_row([[nil, nil, nil], [nil, nil, nil]] , 1, "cú")
-add_another_row([[nil, nil, nil], [nil, nil, nil, "cú"]],[nil, nil, nil, "coco com necau"])
-delete_seat_from_row([[nil, nil, nil], [nil, nil, nil, "cú"], [nil, nil, nil, "coco com necau"]], 1,3)
+add_seat_to_row([[nil, nil, nil], [nil, nil, nil]], 1, "cú")
+add_another_row([[nil, nil, nil], [nil, nil, nil, "cú"]], [nil, nil, nil, "coco com necau"])
+delete_seat_from_row([[nil, nil, nil], [nil, nil, nil, "cú"], [nil, nil, nil, "coco com necau"]], 1, 3)
 count_empty_seats([[nil, nil, nil], [nil, nil, nil]])
-    
+
 find_favorite([
-    { name: 'Ruby', is_my_favorite?: true },
-    { name: 'JavaScript', is_my_favorite?: false },
-    { name: 'HTML', is_my_favorite?: false }
-  ])
+  {name: "Ruby", is_my_favorite?: true},
+  {name: "JavaScript", is_my_favorite?: false},
+  {name: "HTML", is_my_favorite?: false}
+])

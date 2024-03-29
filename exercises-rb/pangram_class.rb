@@ -12,6 +12,7 @@ class Pangram
   def pangram?
     ARRAY_ALL_LETTERS == chars_on_sentence
   end
+
   private
 
   attr_reader :sentence

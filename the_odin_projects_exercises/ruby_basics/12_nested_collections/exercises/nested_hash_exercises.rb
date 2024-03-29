@@ -7,7 +7,7 @@ def find_language_information(languages, language_name)
   #   ruby: { initial_release: 'December 25, 1996', is_beautiful?: true },
   #   javascript: { initial_release: 'December 4, 1995', is_beautiful?: false }
   # }
-   
+
   p languages[language_name.to_sym]
 end
 
@@ -36,14 +36,14 @@ def delete_language(languages, language_name)
   # Take languages and delete the language_name key/value pair, then return
   # languages
   languages.delete(language_name.to_sym)
-  languages 
+  languages
 end
 
 def find_beautiful_languages(languages)
   # Take languages and return a hash containing only languages which have the
   # key/value pair { is_beautiful?: true } listed in their information
 
- p languages.select{|language, value| language if value[:is_beautiful?] == true}
+  p languages.select { |language, value| language if value[:is_beautiful?] == true }
 end
 
 def find_language_facts(languages, language_name, fact_index = 0)
@@ -63,24 +63,20 @@ def find_language_facts(languages, language_name, fact_index = 0)
   #                 is_beautiful?: false }
   # }
 
-p languages.dig(language_name.to_sym,:facts, fact_index)
+  p languages.dig(language_name.to_sym, :facts, fact_index)
 end
 
-
-#find_language_information({
+# find_language_information({
 #    ruby: { initial_release: 'December 25, 1996', is_beautiful?: true },
 #    javascript: { initial_release: 'December 4, 1995', is_beautiful?: false }
 #   },"ruby")
 
-
-
-
 find_language_facts({
-     ruby: { facts: ['fact 0', 'fact 1'],
-             initial_release: 'December 25, 1996',
-             is_beautiful?: true },
+  ruby: {facts: ["fact 0", "fact 1"],
+         initial_release: "December 25, 1996",
+         is_beautiful?: true},
 
-    javascript: { facts: ['fact 0', 'fact 1'],
-                  initial_release: 'December 4, 1995',
-                   is_beautiful?: false }
-   }, "ruby", 1)
+  javascript: {facts: ["fact 0", "fact 1"],
+               initial_release: "December 4, 1995",
+               is_beautiful?: false}
+}, "ruby", 1)

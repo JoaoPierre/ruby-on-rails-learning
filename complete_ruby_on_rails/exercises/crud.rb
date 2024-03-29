@@ -1,12 +1,12 @@
-require 'bundler/inline'
+require "bundler/inline"
 
 gemfile true do
-  source 'http://rubygems.org'
+  source "http://rubygems.org"
   gem "bcrypt"
 end
 
 module Crud
-  require 'bcrypt'
+  require "bcrypt"
   puts "Module crud Activated"
 
   def self.create_hash_digest(password)
@@ -24,7 +24,7 @@ module Crud
     list_of_users
   end
 
-  def self.authenticate_user(username, password , list_of_users)
+  def self.authenticate_user(username, password, list_of_users)
     list_of_users.each do |user|
       if user[:username] == username && verify_hash_digest(user[:password]) == password
         return user

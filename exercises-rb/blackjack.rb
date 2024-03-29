@@ -1,5 +1,5 @@
 module Blackjack
-  CARDS = ["other", "skip" , "two", "three", "four", "five", "six", "seven", "eigth" , "nine" , "ten","ace", "jack", "queen" , "king"]
+  CARDS = ["other", "skip", "two", "three", "four", "five", "six", "seven", "eigth", "nine", "ten", "ace", "jack", "queen", "king"]
 
   def self.parse_card(card)
     case card
@@ -19,8 +19,8 @@ module Blackjack
 
   def self.card_range(card1, card2)
     hand = []
-    hand.push(self.parse_card(card1))
-    hand.push(self.parse_card(card2))
+    hand.push(parse_card(card1))
+    hand.push(parse_card(card2))
     case hand.sum
     when (4..11) then "low"
     when (12..16) then "mid"
@@ -30,20 +30,24 @@ module Blackjack
   end
 
   def self.first_turn(card1, card2, dealer_card)
-    case
-    when card1== "ace" && card2== "ace" then "P"
-    when self.card_range(card1, card2) === "blackjack"
-      case
-      when self.parse_card(dealer_card) >= 10 then "S"
-      else "W"
+    if card1 == "ace" && card2 == "ace"
+      "P"
+    elsif card_range(card1, card2) === "blackjack"
+      if parse_card(dealer_card) >= 10
+        "S"
+      else
+        "W"
       end
-    when self.card_range(card1, card2) === "high" then "S"
-    when self.card_range(card1, card2) === "mid"
-      case
-      when self.parse_card(dealer_card) >= 7 then "H"
-      else "S"
+    elsif card_range(card1, card2) === "high"
+      "S"
+    elsif card_range(card1, card2) === "mid"
+      if parse_card(dealer_card) >= 7
+        "H"
+      else
+        "S"
       end
-    when self.card_range(card1, card2) === "low" then "H"
+    elsif card_range(card1, card2) === "low"
+      "H"
     end
   end
 end

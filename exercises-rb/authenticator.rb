@@ -1,13 +1,13 @@
 users = [
-          {username: "mashrur", password: "password1"},
-          {username: "jack", password: "password2"},
-          {username: "arya", password: "password3"},
-          {username: "jonshow", password: "password4"},
-          {username: "heisenberg", password: "password5"}
-        ]
+  {username: "mashrur", password: "password1"},
+  {username: "jack", password: "password2"},
+  {username: "arya", password: "password3"},
+  {username: "jonshow", password: "password4"},
+  {username: "heisenberg", password: "password5"}
+]
 
 puts "Welcome to the authenticator"
-20.times{print "-"}
+20.times { print "-" }
 puts "This program will take input from the user and compare password"
 
 key_to_out = ""
@@ -24,7 +24,6 @@ while key_to_out != "n"
   user_username = gets.chomp
   puts "Password:"
   user_password = gets.chomp
-
 
   userHash = {username: user_username, password: user_password}
 

@@ -10,12 +10,11 @@ class Gato
   end
 end
 
+# cachorro = Cachorro.new
+# cachorro.latir
 
-#cachorro = Cachorro.new
-#cachorro.latir
-
-##Gato.new.miar
-class Conta 
+# #Gato.new.miar
+class Conta
 end
 
 class Banco
@@ -24,45 +23,42 @@ class Banco
   end
 end
 
-#banco = Banco.new
-#conta = banco.criar_nova_conta
+# banco = Banco.new
+# conta = banco.criar_nova_conta
 
-
-class Pessoaa 
+class Pessoaa
   def definir_nome(nome_da_pessoa)
-    #puts ("O novo nome é #{nome_da_pessoa}")
+    # puts ("O novo nome é #{nome_da_pessoa}")
     @nome = nome_da_pessoa
   end
 
   def exibir_informaçoes
-    puts ("Nome: #{@nome}")
+    puts("Nome: #{@nome}")
   end
-
 end
 
-pessoa= Pessoaa.new 
+pessoa = Pessoaa.new
 pessoa.definir_nome("Joao")
 
-#pessoa.exibir_informaçoes
+# pessoa.exibir_informaçoes
 
-
-#metodo construtor
+# metodo construtor
 
 class Pessoa
-  def initialize(nome , idade)
-    @nome = nome 
-    @idade = idade 
-  end 
+  def initialize(nome, idade)
+    @nome = nome
+    @idade = idade
+  end
 
   def exibir_informaçoes
-    puts ("#{@nome} tem #{@idade} de idade.")
+    puts("#{@nome} tem #{@idade} de idade.")
   end
 end
 
 pessoa = Pessoa.new("joao", 20)
-#pessoa.exibir_informaçoes
+# pessoa.exibir_informaçoes
 
-#Métodos Getters e Setters 
+# Métodos Getters e Setters
 
 class Produto
   attr_accessor :fabricante
@@ -70,22 +66,21 @@ class Produto
   attr_accessor :nome
 
   def initialize
-    @fabricante= "Apple"
+    @fabricante = "Apple"
     @codigo = 1234
   end
-end  
+end
 
 produto = Produto.new
 produto.fabricante = "Loud"
-#puts produto.fabricante
+# puts produto.fabricante
 
-
-#metodos de instancia x metodos de classe
+# metodos de instancia x metodos de classe
 
 class Tempo
-  def self.agora 
+  def self.agora
     Time.now
   end
 end
 
-puts (Tempo.agora)
+puts(Tempo.agora)

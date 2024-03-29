@@ -11,6 +11,7 @@ class BlogPostsController < ApplicationController
   def new
     @blog_post = BlogPost.new
   end
+
   def create
     @blog_post = BlogPost.new(blog_post_params)
     if @blog_post.save
@@ -19,15 +20,16 @@ class BlogPostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
   def edit
   end
 
   def update
-      if @blog_post.update(blog_post_params)
-        redirect_to @blog_post
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @blog_post.update(blog_post_params)
+      redirect_to @blog_post
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -35,8 +37,7 @@ class BlogPostsController < ApplicationController
     redirect_to root_path
   end
 
-
-private
+  private
 
   def blog_post_params
     params.require(:blog_post).permit(:title, :body)
@@ -47,5 +48,4 @@ private
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path
   end
-
 end

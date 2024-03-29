@@ -1,5 +1,4 @@
 class RunLengthEncoding
-
   def self.encode(input)
     new(input).encode
   end
@@ -19,10 +18,10 @@ class RunLengthEncoding
   public
 
   def encode
-   input.gsub(/(.)\1+/){|match| "#{match.length}#{match[0]}"}
+    input.gsub(/(.)\1+/) { |match| "#{match.length}#{match[0]}" }
   end
 
   def decode
-    input.gsub(/\d+\D/){|match| match[-1] * match.to_i}
+    input.gsub(/\d+\D/) { |match| match[-1] * match.to_i }
   end
 end

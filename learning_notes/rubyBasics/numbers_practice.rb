@@ -10,7 +10,7 @@ end
 
 def multiply(a, b)
   # return the result of multiplying a times b
-  a * b 
+  a * b
 end
 
 def divide(a, b)

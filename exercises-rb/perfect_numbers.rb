@@ -11,18 +11,20 @@ class PerfectNumber
   end
 
   def classify
-    case
-    when number == sum_multiples then "perfect"
-    when number < sum_multiples then "abundant"
-    when number > sum_multiples then "deficient"
+    if number == sum_multiples
+      "perfect"
+    elsif number < sum_multiples
+      "abundant"
+    elsif number > sum_multiples
+      "deficient"
     end
   end
 
   def number_multiples
     if number.even?
-      (1..number/2).to_a.select{|num| number % num == 0}
+      (1..number / 2).to_a.select { |num| number % num == 0 }
     else
-     (1..(number-1)/2).to_a.select{|num| number % num == 0}
+      (1..(number - 1) / 2).to_a.select { |num| number % num == 0 }
     end
   end
 

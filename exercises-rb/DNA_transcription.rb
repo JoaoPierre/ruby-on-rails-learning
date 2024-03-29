@@ -1,5 +1,4 @@
 class Complement
-
   DNA_NUCLEOTIDES = "GCTA"
   RNA_NUCLEOTIDES = "CGAU"
 

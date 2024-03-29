@@ -9,7 +9,7 @@ class Cypher
   private_constant :LAL, :RLL, :RKL
 
   attr_reader :key, :number_key
-  def initialize(key=nil)
+  def initialize(key = nil)
     if key
       check_key(key)
       @key = key
@@ -30,7 +30,7 @@ class Cypher
   end
 
   def check_key(key)
-    return ArgumentError.new("Key only accepts lowercased letters") if key.match(/[A-Z]|\d|/) || key.empty?
+    ArgumentError.new("Key only accepts lowercased letters") if key.match(/[A-Z]|\d|/) || key.empty?
   end
 end
 cypher = Cypher

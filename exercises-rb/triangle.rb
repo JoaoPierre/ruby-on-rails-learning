@@ -22,7 +22,7 @@ class Triangle
   end
 
   def valid_sides?
-    sides.all?{|side| side > 0}
+    sides.all? { |side| side > 0 }
   end
 
   def fits_triangle_rule?
@@ -31,5 +31,5 @@ class Triangle
   end
 end
 
-triangle = Triangle.new([2,2,2])
+triangle = Triangle.new([2, 2, 2])
 triangle.isosceles?

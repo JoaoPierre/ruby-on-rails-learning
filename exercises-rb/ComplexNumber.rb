@@ -1,5 +1,4 @@
 class ComplexNumber
-
   attr_reader :real, :imaginary
 
   def initialize(real, imaginary = 0)
@@ -8,27 +7,27 @@ class ComplexNumber
   end
 
   def ==(other)
-     (self - other).abs < 0.01
+    (self - other).abs < 0.01
   end
 
   def +(other)
-    self.class.new(real + other.real , imaginary + other.imaginary)
+    self.class.new(real + other.real, imaginary + other.imaginary)
   end
 
   def -(other)
-    self.class.new(real - other.real , imaginary - other.imaginary)
+    self.class.new(real - other.real, imaginary - other.imaginary)
   end
 
   def *(other)
-    self.class.new(real*other.real- imaginary*other.imaginary, imaginary*other.real + @real*other.imaginary)
+    self.class.new(real * other.real - imaginary * other.imaginary, imaginary * other.real + @real * other.imaginary)
   end
 
   def /(other)
-    self.class.new((real*other.real+imaginary*other.imaginary)/other.abs**2, (imaginary*other.real - real*other.imaginary)/other.abs**2)
+    self.class.new((real * other.real + imaginary * other.imaginary) / other.abs**2, (imaginary * other.real - real * other.imaginary) / other.abs**2)
   end
 
   def conjugate
-    self.class.new(real,-imaginary)
+    self.class.new(real, -imaginary)
   end
 
   def abs

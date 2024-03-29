@@ -1,8 +1,8 @@
-require_relative 'crud'
+require_relative "crud"
 
 class Student
   include Crud
-  attr_accessor :first_name,:last_name, :email, :username, :password
+  attr_accessor :first_name, :last_name, :email, :username, :password
 
   def initialize(first_name, last_name, username, password, email)
     @email = email
