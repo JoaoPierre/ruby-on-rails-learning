@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get "user/:id", to: "users#show", defaults: {format: :json}
   get "tasks/:id", to: "tasks#show"
   get "tasks", to: "tasks#index"
+
+  resources :posts
 end
