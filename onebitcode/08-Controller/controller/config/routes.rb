@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get "sample/hello" , defaults: {format: :json}
   get "sample2", to: "sample#hello", defaults: {format: :json}
   get "user/:id", to: "users#show", defaults: {format: :json}
+  get "tasks/:id", to: "tasks#show"
+  get "tasks", to: "tasks#index"
 end
